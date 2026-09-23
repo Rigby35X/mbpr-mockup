@@ -22,7 +22,8 @@
   --sand-deep:       #6db4ec; /* Tinted sections, header link hover, tags and image placeholders. */
   --sand-line:       #6db4ec; /* Borders on cards, header, mobile menu and form panels. */
   --gold:            #E4A053; /* Primary button fill, stat numbers and small accents. */
-  --gold-deep:       #FFFFFF; /* Primary button hover, active header link, icons and focus outline. */
+  --gold-button-hover: #6db4ec; /* Hover background for yellow buttons only. */
+  --gold-deep:       #FFFFFF; /* Active header link, icons and focus outline. */
   --gold-pale:       #FCEBD1; /* Light background behind selected badges and icons. */
   --seafoam:         #5FBBA0; /* Nursery status badge, progress bar and dashed badge border. */
   --seafoam-pale:    #6db4ec; /* Background behind seafoam action icons and draft badges. */
@@ -107,6 +108,7 @@ p:last-child{ margin-bottom:0; }
 .section.lagoon-pale{ background:var(--lagoon-pale); }
 
 .lede{ font-size:1.2rem; max-width:60ch; color:var(--bay-navy); opacity:.85; }
+.text-small{ font-size:.92rem; }
 
 /* ---- buttons ---- */
 .btn{
@@ -127,7 +129,7 @@ p:last-child{ margin-bottom:0; }
 .btn:hover{ transform:translateY(-2px); }
 .btn svg{ width:18px; height:18px; }
 .btn-gold{ background:var(--gold); color:var(--bay-navy-deep); box-shadow:var(--shadow-sm); }
-.btn-gold:hover{ background:var(--gold-deep); box-shadow:var(--shadow-md); }
+.btn-gold:hover{ background:var(--gold-button-hover); box-shadow:var(--shadow-md); }
 .btn-navy{ background:var(--bay-navy); color:var(--white); box-shadow:var(--shadow-sm); }
 .btn-navy:hover{ background:var(--bay-navy-deep); box-shadow:var(--shadow-md); }
 .btn-outline{ background:transparent; border-color:currentColor; color:var(--bay-navy); }
