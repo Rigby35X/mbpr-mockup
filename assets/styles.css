@@ -37,6 +37,14 @@
   --radius-lg:       28px;
   --mobile-header-height: 75px;
 
+  /* ---- spacing scale ---- */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 72px;
+
   /* ---- type tokens ---- */
   --font-display: 'Oswald', 'Arial Narrow', sans-serif;
   --font-body: 'Figtree', -apple-system, 'Segoe UI', sans-serif;
@@ -101,8 +109,8 @@ p:last-child{ margin-bottom:0; }
 .eyebrow.on-dark{ color:var(--lagoon); }
 
 .container{ max-width:1180px; margin:0 auto; padding:0 24px; }
-.section{ padding:72px 0; }
-.section.tight{ padding:48px 0; }
+.section{ padding:var(--space-6) 0; }
+.section.tight{ padding:var(--space-5) 0; }
 .section.sand-deep{ background:var(--sand-deep); }
 .section.navy{ background:var(--bay-navy); color:#DCEBF5; }
 .section.navy h2, .section.navy h3, .section.navy h4{ color:var(--white); }
@@ -427,7 +435,7 @@ p:last-child{ margin-bottom:0; }
 .route-tile .link-quiet{ margin-top:4px; }
 
 /* checklist w/ paw bullets */
-.paw-list{ display:flex; flex-direction:column; gap:14px; }
+.paw-list{ display:flex; flex-direction:column; gap:var(--space-2); }
 .paw-list li{ display:flex; align-items:flex-start; gap:12px; }
 .paw-list li svg{ width:20px; height:20px; flex-shrink:0; margin-top:3px; color:var(--bay-navy); }
 .paw-list.filled-paws li svg{ fill:var(--bay-navy); }
@@ -464,9 +472,15 @@ p:last-child{ margin-bottom:0; }
 .split.reverse .media{ order:2; }
 .adopt-requirements .media{ order:2; }
 .adopt-requirements .media img{ width:100%; aspect-ratio:4 / 5; object-fit:cover; }
-.adopt-actions{ display:flex; flex-wrap:wrap; align-items:center; gap:14px; margin:26px 0; }
+.adopt-actions{ display:flex; flex-wrap:wrap; align-items:center; gap:var(--space-2); }
+.adoption-form-embed{
+  width:100%; max-width:800px; margin:0 auto; padding:clamp(16px, 3vw, 30px);
+  background:var(--white); border:1px solid var(--sand-line);
+  border-radius:var(--radius-lg); box-shadow:var(--shadow-md); text-align:left;
+}
+.adoption-form-embed iframe{ display:block; width:100%; max-width:100%; border:0; }
 @media (max-width:860px){
-  .section.tight.adopt-section{ padding-top:24px; }
+  .section.tight.adopt-section{ padding-top:var(--space-4); }
   .adopt-requirements .media{ order:0; }
   .adopt-requirements .media img{ aspect-ratio:4 / 3; object-position:center 28%; }
   .adopt-actions{ flex-direction:column; align-items:center; text-align:center; }
@@ -530,8 +544,19 @@ p:last-child{ margin-bottom:0; }
 .skip-link:focus{ left:12px; top:12px; }
 
 /* breadcrumbs-esque page intro */
-.page-intro{ padding:44px 0 8px; }
-.page-intro .eyebrow{ margin-bottom:.5em; }
+.page-intro{ padding:var(--space-5) 0 0; }
+.page-intro .container > *{ margin-bottom:0; }
+.page-intro .container > * + *{ margin-top:var(--space-2); }
+.page-intro .container > .eyebrow + h1{ margin-top:var(--space-1); }
+
+/* Add class="content-flow" to a text wrapper for the shared heading, copy, list and action spacing. */
+.content-flow > *{ margin-block:0; }
+.content-flow > * + *{ margin-top:var(--space-3); }
+.content-flow > .eyebrow + :is(h1,h2,h3,h4){ margin-top:var(--space-1); }
+.content-flow > :is(h1,h2,h3,h4) + :is(p,ul,ol){ margin-top:var(--space-2); }
+.content-flow > :is(p,ul,ol) + :is(p,ul,ol){ margin-top:var(--space-2); }
+.content-flow > :is(p,ul,ol) + :is(h2,h3,h4){ margin-top:var(--space-4); }
+.content-flow > * + :is(.btn,.action-row){ margin-top:var(--space-4); }
 
 /* mobile menu icon states */
 .icon-open{ display:block; }
